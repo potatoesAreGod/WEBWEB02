@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Position</title>
+
+    <style>
+      body {
+        font-family: Sans-serif;
+      }
+
+      button {
+        top: 20px;
+        left: 43%;
+        position: fixed;
+      }
+
+      p {
+        top: 30px;
+        left: 43%;
+        position: fixed;
+      }
+
+      div {
+        width: 100px;
+        height: 80px;
+        background-color: red;
+        border: 1px black solid;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 300%;
+        position: fixed;
+      }
+
+      #abox {
+        top: 0;
+        left: 0;
+      }
+
+      #bbox {
+        top: 0;
+        right: 0;
+      }
+
+      #cbox {
+        bottom: 0;
+        left: 0;
+      }
+
+      #dbox {
+        bottom: 0;
+        right: 0;
+      }
+
+      #ebox {
+        width: 200px;
+        height: 160px;
+        padding-top: 40px;
+        top: 40%;
+        left: 43%;
+        border-radius: 50%;
+        animation: colors 6s infinite;
+      }
+
+      @keyframes colors {
+        0% {
+          background-color: red;
+          color: white;
+        }
+        25% {
+          background-color: yellow;
+          color: blue;
+        }
+        50% {
+          background-color: blue;
+          color: lightblue;
+        }
+        75% {
+          background-color: green;
+          background-color: yellow;
+        }
+        100% {
+          background-color: white;
+          color: black;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        button,
+        #tid,
+        #ebox {
+          position: fixed;
+          left: 30%;
+        }
+
+        #abox,
+        #bbox,
+        #cbox,
+        #dbox {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      type="button"
+      onclick="document.getElementById('tid').innerHTML = Date()"
+    >
+      Klicka här för att visa datum och tid.
+    </button>
+    <p id="tid"></p>
+    <div id="abox">A</div>
+    <div id="bbox">B</div>
+    <div id="cbox">C</div>
+    <div id="dbox">D</div>
+    <div id="ebox">E</div>
+  </body>
+</html>

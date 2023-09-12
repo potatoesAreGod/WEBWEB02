@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <script>
+      var countDownDate = new Date("Oct 27, 2023 15:50:00").getTime();
+
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      }, 1000);
+    </script>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #add8e6;
+        text-align: center;
+        width: 50vw;
+        padding-left: 25vw;
+      }
+      h1 {
+        border: 1px #000 solid;
+        border-radius: 20%;
+        background-image: linear-gradient(to right, #ff0, #add8e6);
+      }
+      img {
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+      ul {
+        list-style-position: inside;
+        padding-left: 0;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .list {
+        padding: 5px;
+        border: 1px solid #000;
+      }
+      .bar {
+        border-bottom: 2px #000 solid;
+      }
+
+      @media only screen and (max-width: 600px) {
+        img {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="lbs-logo.gif" />
+    <h1>LBS Halmstad</h1>
+    <h2>Höstterminen 2023</h2>
+    <p class="bold">Exempel på vad vi ska lära oss</p>
+    <p class="list">javascript</p>
+    <p class="list">css animationer</p>
+    <p class="list">css kod for position + z index</p>
+    <p class="list">formulär</p>
+    <p class="list">grid o bootstrap</p>
+    <h2>Höstens kurser</h2>
+    <ul>
+      <li>webb</li>
+      <li>eng</li>
+    </ul>
+    <p>Nu har höstterminen börjat. Nästa lov har vi om</p>
+    <p id="countdown"></p>
+    <footer>
+      <div class="bar"></div>
+      <p>Tim TE21. LBS Halmstad</p>
+    </footer>
+  </body>
+</html>
