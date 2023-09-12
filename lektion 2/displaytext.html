@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Display-flex</title>
+
+    <style>
+      body {
+        font-family: Sans-serif;
+        margin-left: 10%;
+      }
+
+      h2 {
+        text-align: center;
+        animation: spinniboi 3s infinite alternate;
+      }
+
+      @keyframes spinniboi {
+        from {
+          transform: rotate(0deg) scale(1, 1);
+        }
+        to {
+          transform: rotate(359deg) scale(2, 2);
+        }
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        border: solid black 1px;
+        animation: colors 3s infinite;
+      }
+
+      @keyframes colors {
+        0% {
+          background-color: teal;
+          color: white;
+        }
+        50% {
+          background-color: yellow;
+          color: red;
+        }
+        100% {
+          background-color: lime;
+          color: black;
+        }
+      }
+
+      #bigbox {
+        display: flex;
+      }
+
+      #textbox {
+        width: 50%;
+        border: solid black 1px;
+        margin-top: 20px;
+        padding: 10px;
+        margin-bottom: 100px;
+        columns: 3px 2;
+        column-rule: solid 3px lightblue;
+      }
+
+      button {
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        border: 10px dotted deepskyblue;
+        background-color: violet;
+        border-radius: 8px;
+      }
+    </style>
+
+    <script>
+      let mhmm = 1;
+      let notSoMhmm = 1;
+      let yello = 1;
+      let sharkie = 1;
+      let bod = 100;
+      function hmm() {
+        alert("it feels so good");
+      }
+      function notsohmm() {
+        if (mhmm) {
+          document.getElementById("textbox").style.display = "None";
+          mhmm = 0;
+        } else {
+          document.getElementById("textbox").style.display = "block";
+          mhmm = 1;
+        }
+      }
+      function hmmhmmhmm() {
+        if (notSoMhmm) {
+          document.getElementById("bigbox").style.display = "block";
+          notSoMhmm = 0;
+        } else {
+          document.getElementById("bigbox").style.display = "flex";
+          notSoMhmm = 1;
+        }
+      }
+      function bb() {
+        if (sharkie) {
+          document.getElementById("textbox").style.color = "black";
+          sharkie = 0;
+        } else {
+          document.getElementById("textbox").style.color = "blue";
+          sharkie = 1;
+        }
+      }
+      function yell() {
+        if (yello) {
+          document.getElementById("textbox").style.backgroundColor = "white";
+          yello = 0;
+        } else {
+          document.getElementById("textbox").style.backgroundColor = "yellow";
+          yello = 1;
+        }
+      }
+      function bolder() {
+        document.getElementById("textbox").style.fontWeight = bod;
+        if (bod > 800) bod = 100;
+        else bod += 300;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Display Flex</h1>
+
+    <div id="bigbox">
+      <div class="box"><h2>Box 1</h2></div>
+      <div class="box"><h2>Box 2</h2></div>
+      <div class="box"><h2>Box 3</h2></div>
+    </div>
+
+    <div id="bigbox">
+      <button onclick="hmm()">smash me UwU</button>
+      <button onclick="notsohmm()">touch me</button>
+      <button onclick="hmmhmmhmm()">hmm</button>
+    </div>
+
+    <div id="bigbox">
+      <button onclick="bb()">blåhaj</button>
+      <button onclick="yell()">gul bakgrund</button>
+      <button onclick="bolder()">boulderify</button>
+    </div>
+
+    <div id="textbox">
+      <h3>What are CSS Animations?</h3>
+      <p>
+        An animation lets an element gradually change from one style to another.
+        You can change as many CSS properties you want, as many times as you
+        want.
+      </p>
+      <p>
+        To use CSS animation, you must first specify some keyframes for the
+        animation. Keyframes hold what styles the element will have at certain
+        times.
+      </p>
+
+      <p>
+        The @keyframes Rule. When you specify CSS styles inside the @keyframes
+        rule, the animation will gradually change from the current style to the
+        new style at certain times.
+      </p>
+    </div>
+  </body>
+</html>
