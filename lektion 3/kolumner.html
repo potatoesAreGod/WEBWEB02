@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kolumner</title>
+    <style>
+      body {
+        font-family: Sans-serif;
+        margin-left: 10%;
+      }
+
+      h1 {
+        text-align: center;
+        column-span: all;
+      }
+      #ruta1,
+      #ruta2,
+      #ruta3 {
+        width: 200px;
+        height: 200px;
+        border: dotted blue 3px;
+        background-color: yellow;
+        margin: 20px;
+      }
+      #ruta1 {
+        animation: zooooooooooooooooooooooooooooooooooooooooooooooom 5s infinite;
+      }
+
+      @keyframes zooooooooooooooooooooooooooooooooooooooooooooooom {
+        0% {
+          scale: 100%;
+        }
+        50% {
+          scale: 200%;
+        }
+      }
+      #ruta2 {
+        animation: yup 5s infinite;
+      }
+      @keyframes yup {
+        0% {
+          scale: 100%;
+          rotate: 90deg;
+        }
+        33% {
+          scale: 125%;
+          rotate: 0deg;
+        }
+        67% {
+          scale: 50%;
+          rotate: -180deg;
+        }
+      }
+      #ruta3 {
+        animation: yee 5s infinite;
+        background-color: none;
+      }
+      @keyframes yee {
+        0% {
+          background-color: white;
+        }
+        25% {
+          background-color: red;
+        }
+        50% {
+          background-color: blue;
+        }
+        75% {
+          background-color: yellow;
+        }
+      }
+      #ruta3:hover {
+        border-radius: 15%;
+        scale: 150%;
+      }
+
+      #text {
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 100px;
+      }
+
+      button {
+        width: 150px;
+        height: 50px;
+        margin-top: 50px;
+      }
+
+      #kolumner {
+        width: 65%;
+        columns: 2 40px;
+        column-rule: solid 3px lightblue;
+        text-align: justify;
+      }
+
+      #flexboi {
+        display: flex;
+      }
+    </style>
+    <script>
+      let mhmm = 1;
+      function tres() {
+        if (mhmm) {
+          document.getElementById("ruta3").style.display = "None";
+          mhmm = 0;
+        } else {
+          document.getElementById("ruta3").style.display = "block";
+          mhmm = 1;
+        }
+      }
+      function tt() {
+        document.getElementById("text").style.fontSize = "inherit";
+      }
+      function ll() {
+        document.getElementById("bbbb").style.fontSize = "smaller";
+      }
+      function bb() {
+        document.getElementById("bbbb").style.fontSize = "larger";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="kolumner">
+      <h1>Webbdesigner och webbutvecklare</h1>
+      <h2>Vad gör en webbdesigner?</h2>
+      <p id="bbbb">
+        Webbdesigner skapar struktur och funktionalitet för webbplatser och med
+        god användarvänlighet. Webbdesignern designar och bygger upp
+        webbplatser. Med fokus på funktionalitet och användarvänlighet skapar
+        webbdesignern en struktur för webbplatsen och väljer bland annat
+        typsnitt, färgskalor och symboler.
+      </p>
+
+      <h2>Vad gör en webbutvecklare?</h2>
+
+      <p id="bbbb">
+        Skillnaden mellan en webbdesigner och en renodlad webbutvecklare är att
+        utvecklaren bara arbetar med det tekniska som programmering och
+        uppbyggnad av hemsidor. Webbdesigners har ofta kunskaper om olika
+        designprogram som Adobe Photoshop, Illustrator och Fireworks. Man kan ha
+        båda rollerna i mindre företag.
+      </p>
+    </div>
+
+    <div id="flexboi">
+      <div id="ruta1"></div>
+      <div id="ruta2"></div>
+      <div id="ruta3"></div>
+    </div>
+
+    <button onclick="bb()">stor text</button>
+    <button onclick="ll()">liten text</button>
+    <button onclick="tt()">notmal text</button>
+    <button onclick="tres()">göm 3an</button>
+
+    <p id="text">
+      Vad är det för skillnad på Java och JavaScript? Java är ett
+      objektorienterat programspråk medan JavaScript är ett OOP-skriptspråk. Med
+      Java-kod skapas applikationer som körs i en virtuell dator eller
+      webbläsare medan JavaScript-kod endast körs i en webbläsare. Java-koden
+      måste kompileras medan JavaScript-kod består av text.
+    </p>
+  </body>
+</html>
