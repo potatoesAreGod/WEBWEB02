@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Halland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      let mhmm = 1;
+      function toggler() {
+        if (mhmm) {
+          document.getElementById("hehe").style.display = "block";
+          mhmm = 0;
+        } else {
+          document.getElementById("hehe").style.display = "none";
+          mhmm = 1;
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: sans-serif;
+        width: 55vw;
+        padding-left: 20vw;
+      }
+      header {
+        display: flex;
+      }
+      h1 {
+        padding-left: 30px;
+        padding-top: 20px;
+      }
+      nav {
+        display: flex;
+      }
+      nav > p {
+        padding-right: 10px;
+        color: blue;
+      }
+      .divider {
+        padding-top: 10px;
+        border-bottom: blue solid 2px;
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        border: none;
+        background: none;
+        font: inherit;
+      }
+      #annons {
+        position: fixed;
+        right: 10vw;
+        text-align: center;
+        border: blue dotted 5px;
+      }
+      #halland {
+        display: flex;
+      }
+      #karta {
+        width: 150px;
+        margin-left: 5vw;
+      }
+      #karta:hover {
+        width: 200px;
+        margin-left: 0;
+      }
+      #region-text {
+        color: red;
+        padding-top: 25px;
+        margin-left: 20vw;
+        font-weight: bold;
+        font-size: x-large;
+        animation: zoom 1s linear 1s 1 backwards;
+      }
+      #halland-logo {
+        animation: spin 2s 1 linear;
+      }
+      #lbs-logo {
+        animation: smol-spin 0.4s linear 4s 4;
+      }
+      #bra {
+        color: red;
+        animation: zoom 1s linear 1s 1 backwards;
+      }
+      #bättre {
+        color: green;
+        animation: zoom 1s linear 2s 1 backwards;
+      }
+      #bäst {
+        color: blue;
+        animation: zoom 1s linear 3s 1 backwards;
+      }
+      #hehe {
+        display: none;
+        padding-top: 20px;
+      }
+      @keyframes smol-spin {
+        0% {
+          rotate: 0;
+        }
+        25% {
+          rotate: 20deg;
+        }
+        50% {
+          rotate: 0;
+        }
+        75% {
+          rotate: -20deg;
+        }
+        100% {
+          rotate: 0;
+        }
+      }
+      @keyframes zoom {
+        0% {
+          scale: 0;
+        }
+        100% {
+          scale: 1;
+        }
+      }
+      @keyframes spin {
+        50% {
+          rotate: 180deg;
+        }
+        100% {
+          rotate: 360deg;
+        }
+      }
+      @media screen and (max-width: 1325px) {
+        #annons {
+          visibility: hidden;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        body {
+          width: 80vw;
+          padding-left: 10vw;
+        }
+        #halland {
+          display: block;
+        }
+        #karta {
+          width: 40vw;
+          padding-left: 20vw;
+          margin-left: 0;
+        }
+        #annons {
+          visibility: hidden;
+        }
+        #hehe {
+          display: inherit;
+        }
+        button {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img id="halland-logo" src="halland.png" alt="Hallands logga" />
+      <h1>Hallands Region</h1>
+      <p id="region-text">Vår region</p>
+    </header>
+    <div class="divider"></div>
+    <nav>
+      <p>Startsida</p>
+      <p>Kungsbacka</p>
+      <p>Halmstad</p>
+      <p>Varberg</p>
+    </nav>
+    <div id="annons">
+      <h2 id="bra">Bra</h2>
+      <h2 id="bättre">Bättre</h2>
+      <h2 id="bäst">Bäst</h2>
+      <img id="lbs-logo" src="lbs-logo.gif" alt="LBS Kreativa Gymnasiet" />
+      <a href="https://lbs.se"><p>Besök LBS</p></a>
+    </div>
+    <h2>Om Region Halland</h2>
+    <div id="halland">
+      <div>
+        <p>
+          Vi är på väg. Regionen är till för alla som bor och arbetar här i
+          Halland. Vår vision är ”Halland – bästa livsplatsen”.
+        </p>
+        <p>
+          Vi har kommit en bra bit på väg på att göra Region Halland till en
+          bättre plats för alla.
+        </p>
+        <p>Välkommen att följa oss på resan!</p>
+      </div>
+      <img id="karta" src="karta.png" alt="Karta över halland" />
+    </div>
+    <h3>Utveckling och tillväxt</h3>
+    <button onclick="toggler()">Läs mer om våra uppdrag</button>
+    <article id="hehe">
+      Region Hallands uppdrag är att främja fortsatt utveckling och tillväxt i
+      Halland och erbjuda invånarna en god hälso- och sjukvård. Vår vision är
+      att Halland ska bli den bästa livsplatsen och med det menar vi den bästa
+      livsplatsen att bo, leva och vara verksam i. För att lyckas samarbetar vi
+      med kommuner, akademi, näringsliv och civilsamhälle. Halland har en god
+      utveckling och den vill vi bygga vidare på. Ett gynnsamt läge mellan två
+      storstadsregioner har lett till en hög inflyttning och vår region är en av
+      de mest attraktiva i landet att bo och arbeta i. Även vår hälso- och
+      sjukvård ligger bra till i nationella undersökningar.
+    </article>
+    <div class="divider"></div>
+    <footer>
+      <div>
+        <h3>Kontakta oss</h3>
+        <p>
+          Region Halland <br />
+          Box 517 <br />
+          301 80 Halmstad
+        </p>
+        <p>
+          Telefon: 035-13 48 00 <br />
+          E-post: regionen@regionhalland.se
+        </p>
+      </div>
+      <div>
+        <h3>Om webbplatsen</h3>
+        <p>
+          Information om cookies <br />
+          Behandling av personuppgifter <br />
+          Redogörelse för tillgänglighet
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
