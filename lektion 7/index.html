@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulär - Del 1</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin-left: 20%;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formulär - Del 1</h1>
+    <form action="script" method="post">
+      <fieldset>
+        <legend>Formulär test</legend>
+        Namn: <br /><input type="text" namn="namn" value="Tom" /> <br /><br />
+        Telefon: <br /><input type="text" namn="telefon" />
+        <h4>Vilken mat gillar du?</h4>
+        Köttbullar
+        <input type="checkbox" name="mat" value="Köttbullar" /> Fiskbullar
+        <input type="checkbox" name="mat" value="Fiskbullar" /> Sallad
+        <input type="checkbox" name="mat" value="Sallad" />
+        <h4>Gillar du surströmming?</h4>
+        Ja <input type="radio" name="surfisk" value="ja" /> Nej
+        <input type="radio" name="surfisk" value="nej" /> <br /><br />
+        Logga in <br /><input type="password" /> <br /><br />
+        <input type="submit" value="Lämna in dina svar" /> <br /><br />
+        <input type="reset" />
+      </fieldset>
+    </form>
+  </body>
+</html>

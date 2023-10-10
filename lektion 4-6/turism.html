@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turism i Halland</title>
+    <script>
+      function applyStyles(obj, styles) {
+        var property;
+        var styleLength = Object.keys(styles).length;
+        for (var i = 0; i < styleLength; i++) {
+          property = Object.keys(styles)[i];
+          obj.style[property] = styles[property];
+        }
+      }
+
+      function extend(object1, object2) {
+        for (var attrname in object2) {
+          object1[attrname] = object2[attrname];
+        }
+        return object1;
+      }
+
+      function startTicker(id, param) {
+        var tickerBox = document.getElementById(id);
+        var defaultParam = { speed: 5, delay: 500, rotate: true };
+        var extendedParam = extend(defaultParam, param);
+        applyStyles(tickerBox, { overflow: "hidden", "min-height": "40px" });
+        var ul = tickerBox.getElementsByTagName("ul");
+        var li = ul[0].getElementsByTagName("li");
+        applyStyles(ul[0], {
+          padding: 0,
+          margin: 0,
+          position: "relative",
+          "list-style-type": "none",
+        });
+        for (i = 0; i < li.length; i++) {
+          applyStyles(li[i], {
+            position: "absolute",
+            "white-space": "nowrap",
+            display: "none",
+          });
+        }
+
+        var li_index = 0;
+        var trans_width = tickerBox.offsetWidth;
+        var chunk_width = 1;
+
+        var iterateTickerElement = function (trans_width) {
+          li[li_index].style.left = trans_width + "px";
+          li[li_index].style.display = "";
+          var t = setInterval(function () {
+            if (parseInt(li[li_index].style.left) > -li[li_index].offsetWidth) {
+              li[li_index].style.left =
+                parseInt(li[li_index].style.left) - chunk_width + "px";
+            } else {
+              clearInterval(t);
+              trans_width = tickerBox.offsetWidth;
+              li_index++;
+              if (li_index == li.length && extendedParam.rotate == true) {
+                li_index = 0;
+                iterateTickerElement(trans_width);
+              } else if (li_index < li.length) {
+                setTimeout(function () {
+                  iterateTickerElement(trans_width);
+                }, extendedParam.delay);
+              }
+            }
+          }, extendedParam.speed);
+          tickerBox.onmouseover = function () {
+            clearInterval(t);
+          };
+          tickerBox.onmouseout = function () {
+            iterateTickerElement(parseInt(li[li_index].style.left));
+          };
+        };
+        iterateTickerElement(trans_width);
+      }
+    </script>
+    <style>
+      body {
+        font-family: sans-serif;
+        width: 50vw;
+        padding-left: 25vw;
+      }
+      header {
+        display: flex;
+      }
+      h1 {
+        padding-left: 30px;
+        padding-top: 20px;
+      }
+      nav {
+        display: flex;
+      }
+      nav > a,
+      nav > p {
+        margin-right: 10px;
+        color: blue;
+        text-decoration: none;
+      }
+      a:visited {
+        color: blue;
+        text-decoration: none;
+      }
+      .divider {
+        padding-top: 10px;
+        border-bottom: blue solid 2px;
+      }
+      .content {
+        text-align: center;
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+      }
+      #kolumner {
+        columns: 2;
+        column-gap: 40px;
+        column-rule: 3px solid black;
+      }
+      #annons {
+        position: fixed;
+        right: 10vw;
+        text-align: center;
+        animation: ad 3s linear forwards;
+      }
+      #halland {
+        display: flex;
+      }
+      #karta {
+        width: 150px;
+        margin-left: 5vw;
+      }
+      #karta:hover {
+        width: 200px;
+        margin-left: 0;
+      }
+      #region-text {
+        color: red;
+        padding-top: 25px;
+        margin-left: 20vw;
+        font-weight: bold;
+        font-size: x-large;
+        animation: zoom 1s linear 1s 1 backwards;
+      }
+      #halland-logo {
+        animation: spin 2s 1 linear;
+      }
+      .text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: black solid 3px;
+      }
+      #lax {
+        width: 100%;
+      }
+      #fiskare {
+        top: 240px;
+        left: 61vw;
+        position: absolute;
+      }
+      #ticker-box {
+        text-align: center;
+        width: 30vw;
+        margin-left: 12vw;
+        border: 1px solid black;
+        border-radius: 2px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+      }
+      @keyframes smol-spin {
+        0% {
+          rotate: 0;
+        }
+        25% {
+          rotate: 20deg;
+        }
+        50% {
+          rotate: 0;
+        }
+        75% {
+          rotate: -20deg;
+        }
+        100% {
+          rotate: 0;
+        }
+      }
+      @keyframes zoom {
+        0% {
+          scale: 0;
+        }
+        100% {
+          scale: 1;
+        }
+      }
+      @keyframes spin {
+        50% {
+          rotate: 180deg;
+        }
+        100% {
+          rotate: 360deg;
+        }
+      }
+      @media screen and (max-width: 1325px) {
+        #annons {
+          visibility: hidden;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        body {
+          width: 80vw;
+          padding-left: 10vw;
+        }
+        #halland {
+          display: block;
+        }
+        #karta {
+          width: 40vw;
+          padding-left: 20vw;
+          margin-left: 0;
+        }
+        #annons {
+          visibility: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img id="halland-logo" src="halland.png" alt="Hallands logga" />
+      <h1>Hallands Region</h1>
+      <p id="region-text">Vår region</p>
+    </header>
+    <div class="divider"></div>
+    <nav>
+      <p><a href="index.html">Startsida</a></p>
+      <p><a href="">Kungsbacka</a></p>
+      <p><a href="">Halmstad</a></p>
+      <p><a href="">Varberg</a></p>
+      <p><a href="turism.html">Turism i Halland</a></p>
+    </nav>
+    <div id="annons">
+      <p>VISIT LAHOLM U COWARD!!!</p>
+    </div>
+    <div class="content">
+      <div id="ticker-box">
+        <ul>
+          <li>
+            Höstens fisketurer har startat. Anmäl dig medans det finns plats
+          </li>
+        </ul>
+      </div>
+      <script>
+        startTicker("ticker-box");
+      </script>
+      <img id="lax" src="laxen.jpg" alt="llalax" />
+      <img id="fiskare" src="fiskare.png" alt="fiskfiskfiskare" />
+      <div class="text">
+        <h3>Vårt fina Halland</h3>
+        <p id="kolumner">
+          För många besökare är Halland de böljande vågorna och sandstränderna i
+          Mellbystrand, Tylösand, Skrea och Apelviken. Men även inlandet har
+          mycket att erbjuda, något som många tyskar och danskar har insett. Där
+          finns bland annat gott om vilt och mängder av svamp. Laxen är
+          landskapsdjuret och även den mest måltidstypiska råvaran. Följ med på
+          en fisketur.
+        </p>
+      </div>
+      <h3>Hallandsvisan</h3>
+      <audio controls>
+        <source src="hallandsvisan.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <div class="divider"></div>
+    <footer>
+      <div>
+        <h3>Kontakta oss</h3>
+        <p>
+          Region Halland <br />
+          Box 517 <br />
+          301 80 Halmstad
+        </p>
+        <p>
+          Telefon: 035-13 48 00 <br />
+          E-post: regionen@regionhalland.se
+        </p>
+      </div>
+      <div>
+        <h3>Om webbplatsen</h3>
+        <p>
+          Information om cookies <br />
+          Behandling av personuppgifter <br />
+          Redogörelse för tillgänglighet
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
