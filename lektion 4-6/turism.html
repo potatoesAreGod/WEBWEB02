@@ -76,6 +76,9 @@
         };
         iterateTickerElement(trans_width);
       }
+      function closeAd() {
+        document.getElementById("annons").style.display = "none";
+      }
     </script>
     <style>
       body {
@@ -123,7 +126,45 @@
         position: fixed;
         right: 10vw;
         text-align: center;
-        animation: ad 3s linear forwards;
+        animation: ad 3s linear 15s infinite;
+      }
+      #annons-text {
+        background: linear-gradient(
+          to left,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          purple
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 170px;
+        margin: 10px;
+        border: 5px dashed black;
+      }
+      @keyframes ad {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 75vh;
+          left: 10vw;
+        }
+        75% {
+          top: 0;
+          left: 80vw;
+        }
+        100% {
+          top: 25vh;
+          right: 6vw;
+        }
+      }
+      #knappen {
+        background: none;
+        border-radius: 10px;
       }
       #halland {
         display: flex;
@@ -241,13 +282,14 @@
       <p><a href="turism.html">Turism i Halland</a></p>
     </nav>
     <div id="annons">
-      <p>VISIT LAHOLM U COWARD!!!</p>
+      <h1 id="annons-text">COME LAHOLM U COWARD!!</h1>
+      <button id="knappen" onclick="closeAd()">Stäng annonsen</button>
     </div>
     <div class="content">
       <div id="ticker-box">
         <ul>
           <li>
-            Höstens fisketurer har startat. Anmäl dig medans det finns plats
+            Höstens fisketurer har startat. Anmäl dig medans det finns plats.
           </li>
         </ul>
       </div>
