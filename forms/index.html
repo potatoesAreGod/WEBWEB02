@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glass är en mänsklig rättighet</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+      body {
+        font-family: "Acme", sans-serif;
+        margin-left: 17.5vw;
+        width: 65vw;
+        background-image: url("https://i.pinimg.com/originals/e0/28/7b/e0287b2e47bc1b3ef0fa009abb8ac2b3.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+      }
+      select {
+        width: 100px;
+        height: 125px;
+      }
+      .divider {
+        border: 1px black solid;
+      }
+      .knapp {
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .skicka {
+        background-color: springgreen;
+      }
+      .radera {
+        background-color: crimson;
+        color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🍦Glass är en mänsklig rättighet🍦</h1>
+      <div class="divider"></div>
+      <br />
+    </header>
+    <form>
+      <h4>Hur vill du ha glassen serverad?</h4>
+      Strut<input type="radio" name="behållare" value="strut" /> Bägare<input
+        type="radio"
+        name="behållare"
+        value="bägare"
+      />
+      <h4>Hur många kulor vill du ha på glassen? (20kr/st)</h4>
+      <input type="number" name="kulor" min="1" max="4" />
+      <h4>Vilken smak?</h4>
+      <select name="smak" size="4" multiple>
+        <option value="vanilj">Vanilj</option>
+        <option value="jordgubb">Jordgubb</option>
+        <option value="choklad">Choklad</option>
+        <option value="pistach">Pistach</option>
+        <option value="lakrits">Lakrits</option>
+        <option value="hallon">Hallon</option>
+      </select>
+      <h4>Toppings? (10kr/smak)</h4>
+      Strössel
+      <input type="checkbox" name="strössel" value="strössel" />
+      Glitter<input type="checkbox" name="glitter" value="glitter" />
+      Karamel<input type="checkbox" name="karamel" value="karamel" />
+      <h4>Vilken tid hämtar du glassen?</h4>
+      <input type="time" name="tid" />
+      <h4>Hur vill du betala?</h4>
+      Kort<input type="radio" name="betalning" value="kort" /> Swish<input
+        type="radio"
+        name="betalning"
+        value="swish"
+      />
+      <h4>Ge glassen ett betyg från 1 till 5</h4>
+      ⭐ <input type="range" name="betyg" /> ⭐⭐⭐⭐⭐
+      <h4>Skriv vad du tyckte om glassen!</h4>
+      <textarea
+        name="review"
+        cols="40"
+        rows="5"
+        placeholder="Skriv vad du tyckte..."
+      ></textarea>
+      <h4>Skriv ditt namn</h4>
+      <input type="text" name="namn" required placeholder="Byggare Bob" />
+      <h4>Skriv ditt telefonnummer</h4>
+      <input type="tel" name="telefon" required placeholder="0701234567" />
+      <br /><br />
+      <input
+        type="submit"
+        value="Skicka beställningen"
+        onsubmit="alert('tack tack :)');"
+        class="knapp skicka"
+      />
+      <input type="reset" value="Radera ditt val" class="knapp radera" />
+    </form>
+    <br />
+  </body>
+</html>
