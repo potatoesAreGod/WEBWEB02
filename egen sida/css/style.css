@@ -1,0 +1,85 @@
+/* 
+Färger:
+- Mörkgrå: #161616 (Bakgrund)
+- Vit/Grå: #a7a7a7 (Textfärg)
+- Brun:    #9a816b
+- Grön:    #6e9e6b
+- Turkos:  #5d959d
+- Lila:    #986f99 (Footer)
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav&display=swap");
+
+:root {
+  --font-color: #a7a7a7;
+  --header-background: darkslategray;
+  --main-background: #161616;
+  --footer-background: #986f99;
+  --brown: #9a816b;
+  --green: #6e9e6b;
+  --blue: #5d959d;
+  --purple: #986f99;
+}
+
+:focus-visible {
+  outline: 2px solid #5d959d;
+}
+
+::selection {
+  background: var(--font-color);
+  color: var(--main-background);
+}
+
+body {
+  font-family: "Yantramanav", "Segoe UI", sans-serif;
+  color: var(--font-color);
+  background: var(--main-background);
+  margin: 0;
+}
+
+header,
+footer {
+  width: 70vw;
+  height: 75px;
+  padding-top: 25px;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+}
+
+header {
+  background: var(--header-background);
+  position: sticky;
+}
+
+footer {
+  background: var(--header-background);
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color);
+  margin-left: 1vw;
+}
+
+a:hover {
+  text-shadow: #161616 2px 0 10px;
+  text-decoration: underline;
+}
+
+a:active {
+  text-shadow: #a7a7a7 2px 0 10px;
+  text-decoration: underline;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.links {
+  display: flex;
+  margin-top: 1rem;
+}
