@@ -8,7 +8,7 @@ Färger:
 - Lila:    #986f99 (Footer)
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Yantramanav&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
 :root {
   --font-color: #a7a7a7;
@@ -31,7 +31,7 @@ Färger:
 }
 
 body {
-  font-family: "Yantramanav", "Segoe UI", sans-serif;
+  font-family: "Rubik", "Segoe UI", sans-serif;
   color: var(--font-color);
   background: var(--main-background);
   margin: 0;
