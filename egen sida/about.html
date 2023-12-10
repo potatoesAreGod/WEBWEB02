@@ -9,9 +9,9 @@
     />
     <meta name="author" content="Wood Wave UF" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <title>Wood Wave UF</title>
   </head>
   <body>
@@ -30,29 +30,36 @@
     </header>
     <div id="banner"></div>
     <main>
-      <h2>Om oss</h2>
       <div class="about">
-        <p>
-          Hej, vi på Wood Wave UF är tre grabbar som gillar att hålla på med
-          träarbete. Vi heter Tim, Jonathan och Adrian. Vi hoppas att du kommer
-          att uppskatta våra produkter.
-          <br />
-          PS. kika gärna in vår
-          <a
-            href="https://www.instagram.com/woodwaveuf"
-            target="_blank"
-            rel="noreferrer"
-            >Instagram</a
-          >
-        </p>
+        <h2>Om oss</h2>
+        <div class="info">
+          <p>
+            Hej, vi på Wood Wave UF är tre grabbar som gillar att hålla på med
+            träarbete. Vi heter Tim, Jonathan och Adrian. Vi hoppas att du
+            kommer att uppskatta våra produkter.
+            <br />
+            PS. kika gärna in vår
+            <a
+              href="https://www.instagram.com/woodwaveuf"
+              target="_blank"
+              rel="noreferrer"
+              id="instagram"
+              >Instagram</a
+            >
+          </p>
+          <img src="img/woodworking.png" alt="Verktyg för träarbete" />
+        </div>
         <h2>Vår idé</h2>
-        <p>
-          Idén med vårt ungdomsföretag är att hitta ett kreativt sätt att
-          återanvända trä på. Alla våra produkter är tillverkade av spillvirke
-          från brädgårdar. Dessutom är produkterna sedan behandlade med
-          miljövänlig träolja så att de ska hålla så länge som möjligt. All vår
-          tillverkning sker för hand av oss på Wood Wave UF.
-        </p>
+        <div class="info">
+          <img src="img/liten bräda.png" alt="Liten skärbräda med handtag" />
+          <p>
+            Idén med vårt ungdomsföretag är att hitta ett kreativt sätt att
+            återanvända trä på. Alla våra produkter är tillverkade av spillvirke
+            från brädgårdar. Dessutom är produkterna sedan behandlade med
+            miljövänlig träolja så att de ska hålla så länge som möjligt. All
+            vår tillverkning sker för hand av oss på Wood Wave UF.
+          </p>
+        </div>
       </div>
     </main>
     <footer>
@@ -66,7 +73,7 @@
         >
         <a href="about.html">Om oss</a>
         <a href="orders.html">Beställa</a>
-        <a href="#">Tillbaka till toppen</a>
+        <a onclick="scrollToTop()">Tillbaka till toppen</a>
       </div>
     </footer>
   </body>

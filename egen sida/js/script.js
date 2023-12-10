@@ -1,24 +1,16 @@
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-window.onscroll = function () {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollToTopBtn.style.display = "block";
-  } else {
-    scrollToTopBtn.style.display = "none";
-  }
-};
-
 function scrollToTop() {
-  // Get the current scroll position
-  const scrollStep = window.scrollY / 15;
+  // Var på sidan är vi?
+  const scrollStep = window.scrollY / 25;
 
   function scrollAnimation() {
+    // Scrolla tills vi är i topp
     if (window.scrollY > 0) {
       window.scrollBy(0, -scrollStep);
+      // Animera rörelsen så den blir mjuk
       requestAnimationFrame(scrollAnimation);
     }
   }
 
-  // Trigger the scroll animation
+  // Scrolla uppåt
   scrollAnimation();
 }

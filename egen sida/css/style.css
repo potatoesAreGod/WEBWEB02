@@ -30,6 +30,10 @@ Färger:
   color: var(--main-background);
 }
 
+#white {
+  color: #fff;
+}
+
 body {
   font-family: "Rubik", "Segoe UI", sans-serif;
   color: var(--font-color);
@@ -229,15 +233,78 @@ h2 {
   background: var(--purple);
 }
 
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
+.about {
+  width: 40vw;
+  margin-left: 15vw;
+}
+
+.info {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto;
+}
+
+.info > img {
+  width: 200px;
+  margin: 0 70px;
+  border-radius: 10%;
+  box-shadow: var(--font-color) 10px 10px;
+}
+
+#instagram {
+  margin-left: 0;
+  text-decoration: underline var(--font-color) 1px;
+}
+
+@media only screen and (max-width: 600px) {
+  header,
+  footer {
+    width: 80vw;
+    padding: 20px 15vw;
+  }
+
+  header {
+    display: block;
+  }
+
+  .links > a {
+    margin-left: 1rem;
+  }
+
+  #banner {
+    background: url("../img/banner.jpg") no-repeat center fixed;
+    background-size: auto;
+  }
+
+  .products {
+    display: block;
+    text-align: center;
+    margin-left: -25px;
+    margin-top: -50px;
+  }
+
+  .card {
+    margin-bottom: 50px;
+  }
+
+  footer {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .about {
+    width: 80vw;
+    margin-left: -5vw;
+  }
+
+  .info {
+    margin-top: -70px;
+  }
+
+  .info > img {
+    display: none;
+  }
 }
